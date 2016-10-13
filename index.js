@@ -19,7 +19,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("./data.json", function(error, CS_Foundamentals) {
+d3.json("https://andersy005.github.io/InterviewPrepGrid/data.json", function(error, CS_Foundamentals) {
   if (error) throw error;
 
   root = CS_Foundamentals;
