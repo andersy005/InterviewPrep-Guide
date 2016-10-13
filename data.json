@@ -41,24 +41,19 @@
                     "children": [{
                         "name": "Implementation"
 
-                    },
-                    {
+                    }, {
                         "name": "Breadth First Traversal"
 
-                    },
-                    {
+                    }, {
                         "name": "Depth First Traversal"
 
-                    },
-                    {
+                    }, {
                         "name": "Dijkstra’s shortest path "
 
-                    },
-                    {
+                    }, {
                         "name": "Bellman–Ford Algorithm"
 
-                    },
-                    {
+                    }, {
                         "name": "Floyd Warshall Algorithm"
 
                     }]
@@ -88,28 +83,26 @@
                         "name": "AspectRatioBanker"
 
                     }]
-                },
-                {
+                }, {
                     "name": "Bit Manipulation",
                     "children": [{
                         "name": "AspectRatioBanker"
 
                     }]
-                },
-                {
+                }, {
                     "name": "Geometric Algorithms",
                     "children": [{
                         "name": "AspectRatioBanker"
 
                     }]
-                },
-                {
+                }, {
                     "name": "Mathematical Algorithms",
                     "children": [{
                         "name": "AspectRatioBanker"
 
                     }]
-                }]
+                }
+            ]
         },
 
 
@@ -119,30 +112,75 @@
                     "name": "Arrays/Lists"
 
                 }, {
+                    "name": "Matrix"
+                }, {
+                    "name": "Linked List",
+                    "children": [{
+                        "name": "Implementation"
+                    }, {
+                        "name": "Insertion "
+                    }, {
+                        "name": "Deleting a node"
+                    }, {
+                        "name": "Deleting a node at a given position"
+                    }, {
+                        "name": "Find Length of a linked list"
+                    }, {
+                        "name": "Reverse a linked list"
+                    }, {
+                        "name": "Detect a loop in a linked list"
+                    }, {
+                        "name": "Merge two Sorted linked lists"
+                    }, {
+                        "name": "Nth node from the end of a linked list"
+                    }, {
+                        "name": "Intersection of two Sorted linked list"
+                    }, {
+                        "name": "Insert a node in a sorted linked list"
+                    }]
+                }, {
                     "name": "Maps/ HashMaps/ Dictionaries"
 
                 }, {
-                    "name": "Trees",
+                    "name": "Binary Trees"
+                }, {
+                    "name": "Binary Search Trees"
+                }, {
+                    "name": "Stacks",
+
                     "children": [{
-                            "name": "Binary Trees"
-
-                        }, {
-                            "name": "ColorInterpolator"
-
-                        }, {
-                            "name": "DateInterpolator"
-
-                        }, {
-                            "name": "Interpolator"
-
-                        }
-
-                    ]
-                }, {
-                    "name": "Stacks"
+                        "name": "Implemenation"
+                    }, {
+                        "name": "Infix to Postfix Conversion"
+                    }, {
+                        "name": "Evaluation of PostFix Expression"
+                    }, {
+                        "name": "Reverse a string using a stack"
+                    }, {
+                        "name": "Balanced Parantheses"
+                    }, {
+                        "name": "Implement a stack using Queues"
+                    }, {
+                        "name": "Next Greater Element"
+                    }]
 
                 }, {
-                    "name": "Queues"
+                    "name": "Queues",
+                    "children": [{
+                        "name": "Array Implementation"
+                    }, {
+                        "name": "Linked List Implementation"
+                    }, {
+                        "name": "Implement Queue using Stacks"
+                    }, {
+                        "name": "Maximum of all subarrays of size k"
+                    }, {
+                        "name": "How to efficiently implement k Queues in a single array?"
+                    }, {
+                        "name": "An Interesting Method to Generate Binary Numbers from 1 to n"
+                    }, {
+                        "name": "Find the first circular tour that visits all petrol pumps"
+                    }]
 
                 }, {
                     "name": "Sets"
@@ -150,6 +188,15 @@
                 }, {
                     "name": "Graphs"
 
+                }, {
+                    "name": "Heap",
+                    "children": [{
+                        "name": "Why is Binary Heap Preferred over BST for Priority Queue?"
+                    }, {
+                        "name": "Heap Sort"
+                    }, {
+                        "name": "k largest(or smallest) elements in an array"
+                    }]
                 }
 
             ]
