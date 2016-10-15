@@ -18,3 +18,19 @@
   stroke-width: 1.5px;
 }
 
+h3{
+	color: orange;
+	font-weight: normal;
+	line-height: 1.1em;
+	margin: 0.8cm 0 .5em 0;
+  text-align: center;
+}
+
+body{
+    font-family: arial; 
+    font-size: 80%; 
+    line-height: 1.2em; 
+    width: 100%; 
+    margin: 0; 
+    background: #deefea;
+}
