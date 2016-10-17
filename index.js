@@ -1,4 +1,13 @@
 
+// Helper variables
+var closedNodeColor = "steelblue";
+var openedNodeColor = "#def";
+var nodeStartRadius = 15;
+var nodeEndRadius = 10;
+var depthSeparation = 160;
+
+
+
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
     width = 960 - margin.right - margin.left,
     height = 800 - margin.top - margin.bottom;
@@ -40,6 +49,9 @@ d3.json("data.json", function(error, CS_Foundamentals) {
 
 d3.select(self.frameElement).style("height", "800px");
 
+
+
+
 function update(source) {
 
   // Compute the new tree layout.
@@ -47,7 +59,7 @@ function update(source) {
       links = tree.links(nodes);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 180; });
+  nodes.forEach(function(d) { d.y = d.depth * depthSeparation; });
 
   // Update the nodes…
   var node = svg.selectAll("g.node")
@@ -60,15 +72,15 @@ function update(source) {
       .on("click", click);
 
   nodeEnter.append("circle")
-      .attr("r", 1e-6)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .attr("r", nodeStartRadius)
+      .style("fill", function(d) { return d._children ? closedNodeColor : openedNodeColor; });
 
   nodeEnter.append("text")
-      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+      .attr("x", function(d) { return d.children || d._children ? -nodeStartRadius : nodeStartRadius; })
       .attr("dy", ".35em")
       .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
       .text(function(d) { return d.name; })
-      .style("fill-opacity", 1e-6);
+      .style("fill-opacity", nodeStartRadius);
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
@@ -76,8 +88,8 @@ function update(source) {
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
   nodeUpdate.select("circle")
-      .attr("r", 4.5)
-      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+      .attr("r", nodeEndRadius)
+      .style("fill", function(d) { return d._children ? closedNodeColor : openedNodeColor; });
 
   nodeUpdate.select("text")
       .style("fill-opacity", 1);
@@ -89,10 +101,10 @@ function update(source) {
       .remove();
 
   nodeExit.select("circle")
-      .attr("r", 1e-6);
+      .attr("r", nodeStartRadius);
 
   nodeExit.select("text")
-      .style("fill-opacity", 1e-6);
+      .style("fill-opacity", nodeStartRadius);
 
   // Update the links…
   var link = svg.selectAll("path.link")
@@ -127,15 +139,25 @@ function update(source) {
   });
 }
 
+
+
+
+
+
+
+
+
 // Toggle children on click.
 function click(d) {
+  // If clicked on an opened node (close that node)
   if (d.children) {
     d._children = d.children;
     d.children = null;
-  } else {
+  } else { // otherwise, clicked on an unopened node so open it
     d.children = d._children;
     d._children = null;
   }
+
   update(d);
 }
      
