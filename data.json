@@ -10,8 +10,8 @@
                         "name": "Merge Sort"
 
                     }, {
-                        "name": "Quicksort"
-
+                        "name": "Quicksort",
+                        "url": "https://en.wikipedia.org/wiki/Quicksort"
                     }, {
                         "name": "Heapsort"
 

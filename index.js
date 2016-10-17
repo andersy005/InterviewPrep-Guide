@@ -99,7 +99,7 @@ function update(source) {
       .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
       .text(function(d) { return d.name; })
       .style("fill-opacity", nodeStartRadius);
-
+      
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
       .duration(duration)
@@ -172,6 +172,9 @@ function click(d) {
 
     // Set shown children list to null 
     d.children = null;
+  } else if (d._children == null) {
+      // If clicked on end node, open the node's url in a new tab
+      window.open(d.url, '_blank');
   } else { // otherwise, clicked on an unopened node so open it
     // Set shown children to hidden children ("opening" the subtree)
     d.children = d._children;
