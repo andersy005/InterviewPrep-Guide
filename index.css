@@ -9,7 +9,8 @@
 }
 
 .node text {
-  font: 10px sans-serif;
+  font: 11px sans-serif;
+  font-family: monospace;
 }
 
 .link {
@@ -18,12 +19,14 @@
   stroke-width: 1.5px;
 }
 
-h3{
-	color: orange;
+h1{
+	color: darkblue;
 	font-weight: normal;
+  font-family: monospace;
 	line-height: 1.1em;
 	margin: 0.8cm 0 .5em 0;
   text-align: center;
+  text-decoration: underline;
 }
 
 body{
@@ -32,5 +35,6 @@ body{
     line-height: 1.2em; 
     width: 100%; 
     margin: 0; 
+    margin-left: 20px;
     background: #deefea;
 }
