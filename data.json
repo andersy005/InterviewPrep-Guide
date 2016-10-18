@@ -7,8 +7,8 @@
             "children": [{
                     "name": "Sorting",
                     "children": [{
-                        "name": "Merge Sort"
-
+                        "name": "Merge Sort",
+                        "url": "./resources/sorting/merge_sort.md"
                     }, {
                         "name": "Quicksort",
                         "url": "https://en.wikipedia.org/wiki/Quicksort"

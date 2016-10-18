@@ -10,7 +10,7 @@ the right learning resources on their own.
 
 ## Todo:
 * [X] Implement url open action for clicking an end node
-* [ ] Create inital resource document structure
+* [X] Create inital resource document structure
 * [ ] Fill out the resource documents
     * [ ] Algorithms documents
     * [ ] Data Structures documents
