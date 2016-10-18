@@ -9,5 +9,8 @@ to brush up on--without wasting a lot of time searching for
 the right learning resources on their own.
 
 ## Todo:
-* Implement url open action for clicking an end node
-* Create initial Gist for resource documents
+* [X] Implement url open action for clicking an end node
+* [ ] Create inital resource document structure
+* [ ] Fill out the resource documents
+    * [ ] Algorithms documents
+    * [ ] Data Structures documents
