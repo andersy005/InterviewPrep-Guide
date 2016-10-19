@@ -273,3 +273,27 @@ def deleteTree(root):
   deleteTree(root.right)
 
 ```
+
+__________________________________________________________________
+
+#### 6. Convert a Tree into its mirror Tree
+
+Mirror of a Binary Tree T is another Binary Tree M(T) with left and right children of
+all non-leaf nodes interchanged.
+
+```python
+
+def mirror(root):
+  if root is None:
+    return
+
+  else:
+
+    mirror(root.left)
+    mirror(root.right)
+
+    # swap the poinnter in this nodes
+    temp = root.left
+    root.left = root.right
+    root.right = temp 
+```
