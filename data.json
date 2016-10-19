@@ -142,7 +142,8 @@
                     "name": "Maps/ HashMaps/ Dictionaries"
 
                 }, {
-                    "name": "Binary Trees"
+                    "name": "Binary Trees",
+                    "url": "./resources/data_structures/binary_trees.md"
                 }, {
                     "name": "Binary Search Trees"
                 }, {
