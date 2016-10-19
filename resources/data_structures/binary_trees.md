@@ -256,3 +256,20 @@ def maxDepth(root):
     # return max + 1
     return max(leftDepth, rightDepth) + 1
 ```
+
+___________________________________________________________________
+
+#### 5. Delete a Tree
+
+```python
+# Function traverses tree in postorder to delete each and every node of the tree
+def deleteTree(root):
+
+  if node is None:
+    return
+
+  # first delete both subtrees
+  deleteTree(root.left)
+  deleteTree(root.right)
+
+```
