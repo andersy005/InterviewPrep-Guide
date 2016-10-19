@@ -46,7 +46,8 @@ file system
 6. Form of a multi-stage decision-making.
 7. Expression trees are used in compilers.
 8. Huffman coding trees that are used in data compression algorithms.
-_______________________
+
+______________________________________________________________________
 
 #### 1. Binary Tree Representation
 ```python
@@ -63,7 +64,7 @@ root = Node(1)
 root.left = Node(2)
 root.right = Node(3)
 ```
-_____________________
+______________________________________________________________________
 #### 2. Tree Traversals
 
 *Depth First Traversals*:
@@ -203,3 +204,33 @@ def printLevelorder(root):
 **Time Complexity:** O(n) where n is number of nodes in the binary tree
 
 [References](http://en.wikipedia.org/wiki/Breadth-first_traversal)
+
+
+_________________________________________________________
+
+#### 3. Determine if Two Trees are identical
+
+Two trees are identical when they have same data and arrangement of data is also same.
+
+To identify if two trees are identical, we need to traverse both trees simultaneously, and while traversing we need to compare data and children of the trees.
+
+```python
+# Python Program to determine if two trees are identical
+# Given two trees, return true if they are structurally identical
+def identicalTrees(T1, T2):
+  # Both Empty
+  if T1 is None and T2 is None:
+    Return True
+
+  # Both non-empty - > compare them
+  if T1 is not None and T2 is not None:
+    return ((T1.data == T2.data) and
+              identicalTrees(T1.left, T2.left) and
+              identicalTrees(T1.right, T2.right))
+
+
+ # One empty, one root -- false
+ return False
+
+
+```
