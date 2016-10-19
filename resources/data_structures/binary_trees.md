@@ -229,8 +229,30 @@ def identicalTrees(T1, T2):
               identicalTrees(T1.right, T2.right))
 
 
- # One empty, one root -- false
- return False
+    # One empty, one root -- false
+  return False
 
 
+```
+
+
+________________________________________________________________
+
+#### 4. Find the maximum depth or height of a tree
+```python
+# Compute the maxDepth of a tree -- the number of nodes along the longest path
+# from the root node down to the farthest leaf node
+
+def maxDepth(root):
+  if root is None:
+    return 0
+
+  else:
+
+    # Compute the depth of each subtree
+    leftDepth = maxDepth(root.left)
+    rightDepth = maxDepth(root.right)
+
+    # return max + 1
+    return max(leftDepth, rightDepth) + 1
 ```
