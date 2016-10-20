@@ -51,7 +51,7 @@ ______________________________________________________________________
 
 #### 1. Binary Tree Representation
 ```python
-
+# (Python)
 # A python class that represents an individual node in a Binary Tree
 class Node:
   def __init__(self, key):
@@ -63,6 +63,45 @@ class Node:
 root = Node(1)
 root.left = Node(2)
 root.right = Node(3)
+```
+
+```java
+// (Java)
+class Node
+{
+  int data;
+  Node left, right;
+
+  public Node(int key)
+  {
+    data = key;
+    left = right = null;
+  }
+}
+
+//...
+Node root = new Node(1);
+root.left = new Node(2);
+root.right = new Node(3);
+```
+
+```C++
+// (C++)
+struct node 
+{
+  int data;
+  struct node *left, *right;
+};
+
+int main()
+{
+  node *root = new node;
+  root->data = 1;
+  root->left = new node; root->left.data = 2;
+  root->right = new node; root->right.data = 3;
+
+  return 0;
+}
 ```
 ______________________________________________________________________
 #### 2. Tree Traversals
@@ -81,6 +120,7 @@ Algorithm Inorder(tree)
    3. Traverse the right subtree, i.e., call Inorder(right-subtree)
 
 ```python
+# (Python)
 # A python function to do Inorder Traversal
 def Inorder(root):
   if root is None:
@@ -90,10 +130,48 @@ def Inorder(root):
   Inorder(root.left)
 
   # then print the data of node
-  print root.val
+  print(root.val)
 
   # now recur on right child
   Inorder(root.right)
+```
+
+```java
+// (Java)
+public void inOrder(Node root)
+{
+  if (root == null)
+    return null;
+
+  // Traverse the left subtree
+  inOrder(root.left);
+
+  // Print the node data
+  System.out.println(root.data);
+
+  // Traverse the right subtree
+  inOrder(root.right);
+}
+```
+
+```C++
+#include <iostream>
+
+// (C++)
+void inOrder(node* root)
+{
+  if (root == NULL)
+    return NULL;
+
+  // Traverse the left subtree
+  inOrder(root->left);
+
+  // Print the node data
+  std::cout << root->data << "\n";
+
+  // Traverse the right subtree
+  inOrder(root->right);
+}
 ```
 
 Uses of Inorder
@@ -115,14 +193,48 @@ def Preorder(root):
     return None
 
   # First print the data of node
-  print root.val
+  print(root.val)
 
   # Then recur on left child
   Preorder(root.left)
 
   # now recur on right child
   Preorder(root.right)
+```
 
+```java
+// (Java)
+public void preorder(Node root)
+{
+  if (root == null)
+    return null;
+
+  // Print the node's data
+  System.out.println(root.data);
+
+  // Traverse the left subtree
+  preorder(root.left);
+
+  // Traverse the right subtree 
+  preorder(root.right);
+}
+```
+
+```c++
+#include <iostream>
+
+// (C++)
+void preorder(node* root)
+{
+  // Print the node's data
+  std::cout << root->data << "\n";
+
+  // Traverse the left subtree
+  preorder(root->left);
+
+  // Traverse the right subtree
+  preorder(root->right);
+}
 ```
 
 Uses of Preorder
@@ -150,7 +262,39 @@ def Postorder(root):
   Postorder(root.right)
 
   # Finally print the data of the node
-  print root.val
+  print(root.val)
+```
+
+```java
+// (Java)
+public void postorder(Node root)
+{
+  // Traverse the left subtree
+  postorder(root.left);
+
+  // Traverse the right subtree
+  postorder(root.right);
+
+  // Print the node's data
+  System.out.println(root.data);
+}
+```
+
+```c++
+#include <iostream>
+
+// (C++)
+void postorder(node* root)
+{
+  // Traverse the left subtree
+  postorder(root->left);
+
+  // Traverse the right subtree
+  postorder(root->right);
+
+  // Print the node's data
+  std::cout << node->data << "\n";
+}
 ```
 
 Uses of Postorder
@@ -186,7 +330,7 @@ def printLevelorder(root):
 
   while (len(queue) > 0):
     # Print front of queue and remove it form queue
-    print queue[0].data
+    print(queue[0].data)
 
     node = queue.pop(0)
 
@@ -197,10 +341,72 @@ def printLevelorder(root):
     # Enqueue right child
     if node.right is not None:
       queue.append(node.right):
-
-
-
 ```
+
+```java
+// (Java)
+import java.util.*;
+
+//...
+
+public void printLevelOrder(Node root)
+{
+  // Create an empty list/queue for level order traversal 
+  ArrayDeque<Node> queue = new ArrayDeque<Node>();
+
+  // Enqueue the root
+  queue.addLast(root);
+
+  while (!queue.isEmpty())
+  {
+    // Print the front of the queue and remove it from queue
+    System.out.println(queue.peekLast().data);
+    Node node = queue.pop();
+
+    // Enqueue left child
+    if (node.left != null)
+      queue.addLast(node.left);
+
+    // Enqueue right child
+    if (node.right != null)
+      queue.addLast(node.right);
+  }
+}
+```
+
+```c++
+// (C++)
+#include <iostream>
+#include <deque>
+
+//...
+
+void printLevelOrder(node* root)
+{
+  // Create an empty queue for level order traversal
+  deque<node*> q;
+
+  // Enqueue the root
+  q.push_back(root);
+
+  while (!q.empty())
+  {
+    // Print the front of the queue and remove it from the queue
+    node *n = q.front();
+    q.pop_front();
+
+    // Enqueue left child
+    if (n->left != NULL)
+      q.push_back(n->left);
+
+    // Enqueue right child
+    if (n->right != NULL)
+      q.push_back(n->right);
+  }
+}
+```
+
+
 **Time Complexity:** O(n) where n is number of nodes in the binary tree
 
 [References](http://en.wikipedia.org/wiki/Breadth-first_traversal)
@@ -215,12 +421,14 @@ Two trees are identical when they have same data and arrangement of data is also
 To identify if two trees are identical, we need to traverse both trees simultaneously, and while traversing we need to compare data and children of the trees.
 
 ```python
+# (Python)
+
 # Python Program to determine if two trees are identical
 # Given two trees, return true if they are structurally identical
 def identicalTrees(T1, T2):
   # Both Empty
   if T1 is None and T2 is None:
-    Return True
+    return True
 
   # Both non-empty - > compare them
   if T1 is not None and T2 is not None:
@@ -231,8 +439,44 @@ def identicalTrees(T1, T2):
 
     # One empty, one root -- false
   return False
+```
 
+```java
+// (Java)
+public bool identicalTrees(Node t1, Node t2)
+{
+  // Both empty?
+  if (t1 == null && t2 == null)
+    return true;
 
+  // Both non-empty -> compare them
+  if (t1 != null && t2 != null)
+    return ((t1.data == t2.data) &&
+      identicalTrees(t1.left, t2.left) && 
+      identicalTrees(t1.right, t2.right));
+
+  // One empty, one not --> false
+  return false;
+}
+```
+
+```c++
+// (C++)
+bool identicalTrees(node* t1, node* t2)
+{
+  // Both empty?
+  if (t1 == NULL && t2 == NULL)
+    return true;
+
+  // Both non-empty -> compare them
+  if (t1 != NULL && t2 != NULL)
+    return ((t1->data == t2->data) && 
+      identicalTrees(t1->left, t2->left) && 
+      identicalTrees(t1->right, t2->right));
+
+  // One empty and the other not?
+  return false;
+}
 ```
 
 
@@ -240,6 +484,8 @@ ________________________________________________________________
 
 #### 4. Find the maximum depth or height of a tree
 ```python
+# (Python)
+
 # Compute the maxDepth of a tree -- the number of nodes along the longest path
 # from the root node down to the farthest leaf node
 
@@ -247,14 +493,46 @@ def maxDepth(root):
   if root is None:
     return 0
 
-  else:
+  # Compute the depth of each subtree
+  leftDepth = maxDepth(root.left)
+  rightDepth = maxDepth(root.right)
 
-    # Compute the depth of each subtree
-    leftDepth = maxDepth(root.left)
-    rightDepth = maxDepth(root.right)
+  # return max + 1
+  return max(leftDepth, rightDepth) + 1
+```
 
-    # return max + 1
-    return max(leftDepth, rightDepth) + 1
+```java
+// (Java)
+public int maxDepth(Node root)
+{
+  if (root == null)
+    return 0;
+
+  // Compute the depth of each subtree
+  int leftDepth = maxDepth(root.left);
+  int rightDepth = maxDepth(root.right);
+
+  // Return max + 1
+  return Math.max(leftDepth, rightDepth);
+}
+```
+
+```c++
+// (C++)
+#include <algorithm>
+
+int maxDepth(node* root)
+{
+  if (root == NULL)
+    return 0;
+
+  // Compute the depth of each subtree
+  int leftDepth = maxDepth(root->left);
+  int rightDepth = maxDepth(root->right);
+
+  // Return max + 1
+  return std::max(leftDepth, rightDepth);
+}
 ```
 
 ___________________________________________________________________
@@ -262,16 +540,41 @@ ___________________________________________________________________
 #### 5. Delete a Tree
 
 ```python
+# (Python)
 # Function traverses tree in postorder to delete each and every node of the tree
 def deleteTree(root):
-
   if node is None:
     return
 
   # first delete both subtrees
   deleteTree(root.left)
   deleteTree(root.right)
+```
 
+```java
+// (Java)
+public void deleteTree(Node root)
+{
+  if (root == null)
+    return;
+
+  // First delete both subtrees
+  deleteTree(root.left);
+  deleteTree(root.right);
+}
+```
+
+```c++
+// (C++)
+void deleteTree(node* root)
+{
+  if (root == NULL)
+    return;
+
+  // Delete both subtrees
+  deleteTree(root->left);
+  deleteTree(root->right);
+}
 ```
 
 __________________________________________________________________
@@ -282,18 +585,50 @@ Mirror of a Binary Tree T is another Binary Tree M(T) with left and right childr
 all non-leaf nodes interchanged.
 
 ```python
-
+# (Python)
 def mirror(root):
   if root is None:
     return
 
-  else:
+  mirror(root.left)
+  mirror(root.right)
 
-    mirror(root.left)
-    mirror(root.right)
+  # swap the pointer in this nodes
+  temp = root.left
+  root.left = root.right
+  root.right = temp 
+```
 
-    # swap the poinnter in this nodes
-    temp = root.left
-    root.left = root.right
-    root.right = temp 
+```java
+// (Java)
+public void mirror(Node root)
+{
+  if (root == null)
+    return;
+
+  mirror(root.left);
+  mirror(root.right);
+
+  // Swap the pointer in this node
+  Node temp = root.left;
+  root.left = root.right;
+  root.right = temp;
+}
+```
+
+```c++
+// (C++)
+void mirror(node* root)
+{
+  if (root == NULL)
+    return;
+
+  mirror(root->left);
+  mirror(root->right);
+
+  // Swap the pointer in this node
+  node *temp = root->left;
+  root->left = root->right;
+  root->right = temp;
+}
 ```
