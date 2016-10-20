@@ -109,95 +109,45 @@
         {
             "name": "Data Structures",
             "children": [{
-                    "name": "Arrays/Lists"
+                    "name": "Arrays/Lists",
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/arrays.md"
 
                 }, {
-                    "name": "Matrix"
+                    "name": "Matrix",
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/matrix.md"
                 }, {
                     "name": "Linked List",
-                    "children": [{
-                        "name": "Implementation"
-                    }, {
-                        "name": "Insertion "
-                    }, {
-                        "name": "Deleting a node"
-                    }, {
-                        "name": "Deleting a node at a given position"
-                    }, {
-                        "name": "Find Length of a linked list"
-                    }, {
-                        "name": "Reverse a linked list"
-                    }, {
-                        "name": "Detect a loop in a linked list"
-                    }, {
-                        "name": "Merge two Sorted linked lists"
-                    }, {
-                        "name": "Nth node from the end of a linked list"
-                    }, {
-                        "name": "Intersection of two Sorted linked list"
-                    }, {
-                        "name": "Insert a node in a sorted linked list"
-                    }]
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/linked_list.md"
                 }, {
-                    "name": "Maps/ HashMaps/ Dictionaries"
+                    "name": "Maps/ HashMaps/ Dictionaries",
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/hash_maps.md"
 
                 }, {
                     "name": "Binary Trees",
-                    "url": "./resources/data_structures/binary_trees.md"
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/binary_trees.md"
                 }, {
-                    "name": "Binary Search Trees"
+                    "name": "Binary Search Trees",
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/binary_search_trees.md"
                 }, {
                     "name": "Stacks",
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/stacks.md"
 
-                    "children": [{
-                        "name": "Implemenation"
-                    }, {
-                        "name": "Infix to Postfix Conversion"
-                    }, {
-                        "name": "Evaluation of PostFix Expression"
-                    }, {
-                        "name": "Reverse a string using a stack"
-                    }, {
-                        "name": "Balanced Parantheses"
-                    }, {
-                        "name": "Implement a stack using Queues"
-                    }, {
-                        "name": "Next Greater Element"
-                    }]
 
                 }, {
                     "name": "Queues",
-                    "children": [{
-                        "name": "Array Implementation"
-                    }, {
-                        "name": "Linked List Implementation"
-                    }, {
-                        "name": "Implement Queue using Stacks"
-                    }, {
-                        "name": "Maximum of all subarrays of size k"
-                    }, {
-                        "name": "How to efficiently implement k Queues in a single array?"
-                    }, {
-                        "name": "An Interesting Method to Generate Binary Numbers from 1 to n"
-                    }, {
-                        "name": "Find the first circular tour that visits all petrol pumps"
-                    }]
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/queues.md"
 
                 }, {
-                    "name": "Sets"
+                    "name": "Sets",
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/sets.md"
 
                 }, {
-                    "name": "Graphs"
+                    "name": "Graphs",
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/graphs.md"
 
                 }, {
                     "name": "Heap",
-                    "children": [{
-                        "name": "Why is Binary Heap Preferred over BST for Priority Queue?"
-                    }, {
-                        "name": "Heap Sort"
-                    }, {
-                        "name": "k largest(or smallest) elements in an array"
-                    }]
+                    "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/data_structures/heaps.md"
                 }
 
             ]
