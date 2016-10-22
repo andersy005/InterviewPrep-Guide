@@ -4,7 +4,10 @@ In BST, all the left subtree elements should be less than root data and all
 the right subtree elements should be greater than root data. This is called
 **binary search tree** property.
 
-#### 1.Finding an Element in BST
+The time complexity for the following operations is O(n) for worst case scenario (skew Trees)
+
+
+#### 1. Finding an Element in BST
 Start with the root moving left or right using the BST property. If the data we
 are searching is same as nodes data then we return current node.
 
@@ -124,3 +127,70 @@ def findMax(root):
 
 
 ______________________________________________________________________________
+
+#### 6. Find the lowest common ancestor (LCA)
+Given two  pointers to two nodes in a BST, find the lowest common ancestor. Assume
+that both values already exist in the tree.
+
+
+The main idea of the solution is: while traversing BST from root to bottom, the first node
+we encounter with value between a and b , i.e **a < node.val < b**, is the least common ancestor of
+a and b where a < b.
+
+Traverse the BST in preorder, and if we find a node with value in between a and b, then that is
+the LCA.
+
+If its value is greater than both a and b, then the LCA lies on the left side of the node,
+and if its value is smaller than both a and b, then the LCA lies on the right side.
+
+
+
+```python
+def findLCA(root, a, b):
+  while(root):
+    if ((a <= root.data and b > root.data) or (a > root.data and b <= root.data)):
+      return root
+
+    if a < root.data:
+      root = root.left
+
+    else:
+      root = root.right
+```
+
+_______________________________________________________________________________
+
+#### 7. Given a sorted array, convert it to a BST
+
+If we have to choose an array element to be the root of BST, which element should
+we pick?
+
+- The root of a BST should be the middle element from the sorted array.
+- We would pick the middle element from the sorted array in each iteration.
+- There are two array left - the one on its left and the one on its right. These
+are subtrees of the current's node's left and right child.
+
+
+```python
+def BuildBST(a, left, right):
+
+
+  current = Node()
+  if not current:
+    return
+
+  if left == right:
+    current.data = a[left]
+    current.left = None
+    current.right = None
+
+  else:
+    mid = left + (right-left)/2
+    current.data = a[mid]
+    current.left = BuildBST(a, left, mid - 1)
+    current.right = BuildBST(a, mid + 1, right)
+
+  return current
+
+```
+_______________________________________________________________________________________
