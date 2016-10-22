@@ -193,4 +193,53 @@ def BuildBST(a, left, right):
   return current
 
 ```
-_______________________________________________________________________________________
+______________________________________________________________________________
+
+### Balanced Binary Search Trees
+
+In earlier sections we covered some BST operation whose worst case complexity is O(n) where n is the number of nodes in the tree. This happens when the trees are skew trees.
+
+By imposing some restrictions on the heights, we can reduce this worst case complexity to O(log n).
+
+In general, the height of balanced BST are represented with HB(k), where **k** is the difference between
+left subtree height right subtree height. Sometimes k is called **balanced factor**.
+
+In HB(k), if **k=0** then we call such BST as **full balanced BST**.
+
+______________________________________________________________________________
+
+### AVL(Adelson-Velskii and Landis) Trees
+
+In HB(k), if **k=1**, such a BST is called an **AVL tree**.
+
+#### 1. AVL Tree implementation
+```python
+
+class AVLNode:
+
+  def __init__(self, data, balanceFactor, left, right):
+    self.data = data
+    self.balanceFactor = 0
+    self.left = left
+    self.right = right
+
+```
+
+______________________________________________________________________________
+
+
+### Red-Black Trees
+
+___________________________________________________________________________
+
+### Splay Trees
+
+__________________________________________________________________________
+
+### B-Trees
+
+__________________________________________________________________________
+
+### Augmented Trees
+
+__________________________________________________________________________
