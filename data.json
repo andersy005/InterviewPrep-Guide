@@ -8,54 +8,55 @@
                     "name": "Sorting",
                     "children": [{
                         "name": "Merge Sort",
-                        "url": "./resources/sorting/merge_sort.md"
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/sorting/merge_sort.md"
                     }, {
                         "name": "Quicksort",
-                        "url": "https://en.wikipedia.org/wiki/Quicksort"
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/sorting/quicksort.md"
                     }, {
-                        "name": "Heapsort"
-
+                        "name": "Heapsort",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/sorting/heapsort.md"
                     }, {
-                        "name": "Bucket sort"
-
+                        "name": "Bucket sort",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/sorting/bucket_sort.md"
                     }, {
-                        "name": "Radix sort"
-
+                        "name": "Radix sort",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/sorting/radix_sort.md"
                     }, {
-                        "name": "Insertion sort"
-
+                        "name": "Insertion sort",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/sorting/insertion_sort.md"
                     }, {
-                        "name": "Bubble sort"
+                        "name": "Bubble sort",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/sorting/bubble_sort.md"
                     }]
                 }, {
                     "name": "Searching",
                     "children": [{
-                        "name": "Linear Search"
-
+                        "name": "Linear Search",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/searching/linear_search.md"
                     }, {
-                        "name": "Binary Search"
-
+                        "name": "Binary Search",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/searching/binary_search.md"
                     }]
                 }, {
                     "name": "Graph Algorithms",
                     "children": [{
-                        "name": "Implementation"
-
+                        "name": "Implementation",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/graph_algorithms/implementation.md"
                     }, {
-                        "name": "Breadth First Traversal"
-
+                        "name": "Breadth First Traversal",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/graph_algorithms/breadth_first_traversal.md"
                     }, {
-                        "name": "Depth First Traversal"
-
+                        "name": "Depth First Traversal",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/graph_algorithms/depth_first_traversal.md"
                     }, {
-                        "name": "Dijkstra’s shortest path "
-
+                        "name": "Dijkstra’s shortest path ",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/graph_algorithms/dijkstra.md"
                     }, {
-                        "name": "Bellman–Ford Algorithm"
-
+                        "name": "Bellman–Ford Algorithm",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/graph_algorithms/bellman_ford_algorithm.md"
                     }, {
-                        "name": "Floyd Warshall Algorithm"
-
+                        "name": "Floyd Warshall Algorithm",
+                        "url": "https://github.com/andersy005/InterviewPrep-Guide/blob/master/resources/graph_algorithms/floyd_warshall_algorithm.md"
                     }]
                 },
 
