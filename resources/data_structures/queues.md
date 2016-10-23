@@ -23,20 +23,32 @@ class QueueUsingStacks():
 
   def peek(self):
     if len(self.stack2) == 0:
-      moveItems(self.stack1, self.stack2)
+      self.moveItems(self.stack1, self.stack2)
     return self.stack2[-1]   # return the top element in stack2
 
   def Dequeue(self):
     if len(self.stack2) == 0:
-      moveItems(self.stack1, self.stack2)
+      self.moveItems(self.stack1, self.stack2)
     return self.stack2.pop()  # Return the top element in stack2 and remove it from stack2
 
-  def moveItems(self.stack1, self.stack2):
-    while(len(self.stack1) != 0):
+  def moveItems(self, stack1, stack2):
+    length = len(self.stack1)
+    while(length != 0):
       # Move all the elements from stack1 to stack2
       self.stack2.append(self.stack1.pop())
 
-      len(self.stack1) -= 1
+      length -= 1
+
+
+s = QueueUsingStacks()
+s.Enqueue(10)
+s.Enqueue(20)
+print(s.peek())
+print(s.Dequeue())
+print(s.Dequeue())
+
+
+
 ```
 
 #### Java Implementation
