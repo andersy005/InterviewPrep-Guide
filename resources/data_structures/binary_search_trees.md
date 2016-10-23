@@ -133,31 +133,129 @@ Given two  pointers to two nodes in a BST, find the lowest common ancestor. Assu
 that both values already exist in the tree.
 
 
-The main idea of the solution is: while traversing BST from root to bottom, the first node
-we encounter with value between a and b , i.e **a < node.val < b**, is the least common ancestor of
-a and b where a < b.
+In a given binary tree, The low­est com­mon ances­tor of two nodes n1 and n2 will be a node X such that node X will be the low­est node who has n1 and n2 as its descendants.
 
-Traverse the BST in preorder, and if we find a node with value in between a and b, then that is
-the LCA.
+Approach:
+- Start with the root(Traverse the BST in preorder)
+- if root.data > n1.data and root.data > n2.data then lowest common ancestor will be in left subtree
+- if root.data < n1.data and root.data < n2.data then lowest common ancestor will be in right subtree
+- If step 2 and step 3 are false then we are at the root which is the lowest common ancestor, return it
 
-If its value is greater than both a and b, then the LCA lies on the left side of the node,
-and if its value is smaller than both a and b, then the LCA lies on the right side.
+Note: **n1.data < LCA.data < n2.data** or **n2.data < LCA.data < n1.data**
 
-
-
+#### Python Implementation
 ```python
-def findLCA(root, a, b):
-  while(root):
-    if ((a <= root.data and b > root.data) or (a > root.data and b <= root.data)):
-      return root
+class Node():
+  def __init__(self, data):
+    self.data = data
+    self.left = None
+    self.right = None
 
-    if a < root.data:
+
+def LCAIterative(root, n1, n2):
+  while(root is not None):
+
+    # If root > n1 and root > n2 then lowest common ancestor will be in left subtree
+
+    if root.data > n1.data and root.data > n2.data:
       root = root.left
 
-    else:
+    # if root < n1 and root < n2 then lowest common ancestor will be in right subtree
+
+    elif root.data < n1.data and root.data < n1.data:
       root = root.right
+
+    # If I am here that means I am at the root which is lowest common ancestor
+
+    else:
+      return root
+
+
+
+
+
+def LCARecursive(root, n1, n2):
+  if root is None:
+    return None
+
+  # If root > n1 and root > n2 then lowest common ancestor will be in left subtree
+
+  if root.data > n1.data and root.data > n1.data:
+    return LCARecursive(root.left, n1, n2)
+
+  # if root < n1 and root < n2 then lowest common ancestor will be in right subtree
+
+  elif root.data < n1.data and root.data < n2.data:
+    return LCARecursive(root.right, n1, n2)
+
+
+  # If I am here that means I am at the root which is lowest common ancestor
+  return root
+
+
 ```
 
+
+#### Java Implementation
+```java
+public class LowestCommonAncestorBST {
+	public Node LCA(Node root, Node n1, Node n2) {
+		if (root == null) {
+			return null;
+		}
+		// If root>n1 and root>n2 then lowest common ancestor will be in left
+		// subtree.
+		if (root.data > n1.data && root.data > n2.data) {
+			return LCA(root.left, n1, n2);
+
+		}
+		// If root<n1 and root<n2 then lowest common ancestor will be in right
+		// subtree.
+		else if (root.data <= n1.data && root.data < n2.data) {
+			return LCA(root.right, n1, n2);
+		}
+		// if I am here that means i am at the root which is lowest common
+		// ancestor
+		return root;
+	}
+
+	public Node LCA2(Node root, Node n1, Node n2) {
+		while (root != null) {
+			// If root>n1 and root>n2 then lowest common ancestor will be in
+			// left
+			// subtree.
+			if (root.data > n1.data && root.data > n2.data) {
+				root = root.left;
+			}
+			// If root<n1 and root<n2 then lowest common ancestor will be in
+			// right
+			// subtree.
+			else if (root.data <= n1.data && root.data < n2.data) {
+				root = root.right;
+			}
+			// if I am here that means i am at the root which is lowest common
+			// ancestor
+			else {
+				return root;
+			}
+		}
+		return root;
+	}
+
+
+
+class Node {
+  	int data;
+  	Node left;
+  	Node right;
+
+  	public Node(int data) {
+  		this.data = data;
+  		left = null;
+  		right = null;
+  	}
+  }
+```
 _______________________________________________________________________________
 
 #### 7. Given a sorted array, convert it to a BST
